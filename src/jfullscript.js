@@ -51,8 +51,8 @@ const jfullscript = {
    * @param {string} gcode 고객사이트의 수집 분석 고유아이디 값
    */
   initialize : function (gcode) {
-    if (!gcode) {
-      errorlog("gcode 가 없습니다.");
+    if (gcode===undefined || gcode=='' || String(gcode).length<13) {
+      errorlog("잘못된 GCODE 입니다.");
       return 0;
     }
 
@@ -61,6 +61,7 @@ const jfullscript = {
 
     this.scriptImport();
   },
+  
   /**
    * ifdo-jfullscript 설치 및 pageView 불러오는 함수로 조건문에 맞게 각각 실행한다.
    * 
