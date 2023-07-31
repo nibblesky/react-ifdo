@@ -21,7 +21,6 @@ Initializing ReactIFDO and Tracking Pageviews : Define the code below the ReactI
 ```js
 import ReactIFDO from 'react-ifdo';
 ReactIFDO.initialize('NTA0000000011');
-ReactIFDO.pageview();
 ```
 
 Define the variables required for the page. 
@@ -141,16 +140,14 @@ or
 ###### Example
 
 ```js
-ReactIFDO._NB_PM = 'u'; // pm: u
 ReactIFDO._NB_LO.push({ PC : 'a-15978', PN : 'padding', CT : 'outer', AM : 1, PR : 32000 });
 ReactIFDO._send("cart");
 ```
 
 | Value | Notes|
 | ---------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| _NB_PM | `String`. Required. enter 'u' as the shopping cart separator. |
 | _NB_LO.push | `object`. Required. Enter in the object format that contains each information like `{ PC: 'a-15978', PN: 'padding', CT: 'outer', AM: 1, PR: 32000 }`. |
-| pc | `String`. Optional. Product code like `a-15978`. |
+| PC | `String`. Optional. Product code like `a-15978`. |
 | PN | `String`. Required. Name of the product like `padding`. |
 | CT | `String`. Optional. Product Category like `outer`. |
 | AM | `Number`. Required. Number of Orders like `1`. |
@@ -172,17 +169,15 @@ or
 
 ```js
 ReactIFDO._NB_ORD_NO = "ord-154982";
-ReactIFDO._NB_ORD_AMT = '5';                                          
-ReactIFDO._NB_PM = 'b';                                     
+ReactIFDO._NB_ORD_AMT = '5';                                                                        
 ReactIFDO._NB_LO.push({ PC : 'a-15978', PN : 'padding', CT : 'outer', AM : 1, PR : 32000 });
 ReactIFDO._send("order");
 ```
 
 | Value | Notes|
 | ---------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| _NB_PM | `String`. Required. enter 'b' as the shopping cart separator.|
 | _NB_LO.push | `object`. Required. Enter in the object format that contains each information like `{ PC : 'a-15978', PN : 'padding', CT : 'outer', AM : 1, PR : 32000 }`. |
-| pc | `String`. Optional. Product code like `a-15978`. |
+| PC | `String`. Optional. Product code like `a-15978`. |
 | PN | `String`. Required. Name of the product like `padding`. |
 | CT | `String`. Optional. Product Category like `outer`. |
 | AM | `Number`. Required. Number of Orders like `1`. |
@@ -223,16 +218,14 @@ or
 ###### Example
 
 ```js
-ReactIFDO._NB_PM = 'w';
 ReactIFDO._NB_LO.push({ PC : 'a-15980', PN : 'padding', CT : 'outer', AM : 1, PR : 32000 });
 ReactIFDO._send("wishList");
 ```
 
 | Value | Notes|
 | ---------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| _NB_PM | `String`. Required. enter `w` as the wish list separator. |
 | _NB_LO.push | `object`. Required. Enter in the object format that contains each information like `{ PC: 'a-15978', PN: 'padding', CT: 'outer', AM: 1, PR: 32000 }`. |
-| pc | `String`. Optional. Product code like `a-15980`. |
+| PC | `String`. Optional. Product code like `a-15980`. |
 | PN | `String`. Required. Name of the product like `padding`. |
 | CT | `String`. Optional. Product Category like `outer`. |
 | AM | `Number`. Required. Number of Orders like `1`. |
