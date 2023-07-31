@@ -24,7 +24,7 @@ const jfullscript = {
   _NB_ORD_AMT : "",  /* 주문 총액(숫자) */
   _NB_kwd     : "",  /* 내부검색어 */
   _NB_AMT     : "",  /* 내부검색 결과수 */
-  _NB_UDF     : {},
+  _NB_UDF     : {},  
   _NB_LO      : {
     prodObj   : {},
     push : function(pObj){
@@ -45,6 +45,7 @@ const jfullscript = {
         warnlog("_NB_LO 입력 형식에 맞지 않습니다.");
       }
   }},
+  timeObj     : {}, 
   /**
    * 초기 GCODE 생성해주는 함수로 매개변수로 받은 gcode를 window 객체에 넘겨준다.
    * 
@@ -101,6 +102,12 @@ const jfullscript = {
    * @param {string} PageURL 고객이 직접 설정한 가상 페이지 주소
    */
   _send : function (PageIs, PageURL) {
+
+    var curTime = Math.floor(Date.now()/1000); // 현재 시간
+    var timeTmpObj = this.timeObj[PageIs]; 
+
+    if(timeTmpObj && (curTime - timeTmpObj) < 5) return 0;
+    else this.timeObj[PageIs] = curTime;
 
     switch (PageIs) {
 
