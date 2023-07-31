@@ -149,16 +149,6 @@ ReactIFDO._send("cart");
 
 | Value | Notes|
 | ---------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| _NB_LO.push | `object`. Required. Enter in the object format that contains each information like `{ PC: 'a-15978', PN: 'padding', CT: 'outer', AM: 1, PR: 32000 }`. |
-| PC | `String`. Optional. Product code like `a-15978`. |
-| PN | `String`. Requ체
-   ReactIFDO._NB_LO.push({ PC : 'a-15978', PN : 'padding', CT : 'outer', AM : 1, PR : 32000 });
-}
-ReactIFDO._send("order");
-```
-
-| Value | Notes|
-| ---------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | _NB_LO.push | `object`. Required. Enter in the object format that contains each information like `{ PC : 'a-15978', PN : 'padding', CT : 'outer', AM : 1, PR : 32000 }`. |
 | PC | `String`. Optional. Product code like `a-15978`. |
 | PN | `String`. Required. Name of the product like `padding`. |
