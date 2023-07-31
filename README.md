@@ -140,7 +140,10 @@ or
 ###### Example
 
 ```js
-ReactIFDO._NB_LO.push({ PC : 'a-15978', PN : 'padding', CT : 'outer', AM : 1, PR : 32000 });
+for (...) {
+   // 장바구니 상품 리스트 객체체
+   ReactIFDO._NB_LO.push({ PC : 'a-15978', PN : 'padding', CT : 'outer', AM : 1, PR : 32000 });
+}
 ReactIFDO._send("cart");
 ```
 
@@ -148,29 +151,9 @@ ReactIFDO._send("cart");
 | ---------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | _NB_LO.push | `object`. Required. Enter in the object format that contains each information like `{ PC: 'a-15978', PN: 'padding', CT: 'outer', AM: 1, PR: 32000 }`. |
 | PC | `String`. Optional. Product code like `a-15978`. |
-| PN | `String`. Required. Name of the product like `padding`. |
-| CT | `String`. Optional. Product Category like `outer`. |
-| AM | `Number`. Required. Number of Orders like `1`. |
-| PR | `Number`. Required. Total amount of product like `32000`. |
-
-After setting the variable, call the _send() function is required. See the _send() function below.
-
-##### 5. Purchase Analysis
-
-Set the following variables on the order completion page. Be especially careful when creating the `NB_LO.push` variable. Even if it is an optional value, you must also enter a required variable name. Please look carefully at the format and fill it out accordingly.
-
-###### ReactIFDO._NB_LO.push({PC : '', PN : 'Product Name', CT : '', AM : 'Amount', PR : 'Product Total Amount'});
-
-or
-
-###### ReactIFDO._NB_LO.push({PC : 'Product Code', PN : 'Product Name', CT : 'Category', AM : 'Amount', PR : 'Product Total Amount'});
-
-###### Example
-
-```js
-ReactIFDO._NB_ORD_NO = "ord-154982";
-ReactIFDO._NB_ORD_AMT = '5';                                                                        
-ReactIFDO._NB_LO.push({ PC : 'a-15978', PN : 'padding', CT : 'outer', AM : 1, PR : 32000 });
+| PN | `String`. Requ체
+   ReactIFDO._NB_LO.push({ PC : 'a-15978', PN : 'padding', CT : 'outer', AM : 1, PR : 32000 });
+}
 ReactIFDO._send("order");
 ```
 
@@ -218,7 +201,10 @@ or
 ###### Example
 
 ```js
-ReactIFDO._NB_LO.push({ PC : 'a-15980', PN : 'padding', CT : 'outer', AM : 1, PR : 32000 });
+for (...) {
+   // 위시 리스트 상품 리스트 객체
+   ReactIFDO._NB_LO.push({ PC : 'a-15978', PN : 'padding', CT : 'outer', AM : 1, PR : 32000 });
+}
 ReactIFDO._send("wishList");
 ```
 
