@@ -51,7 +51,10 @@ const jfullscript = {
    * @param {string} gcode 고객사이트의 수집 분석 고유아이디 값
    */
   initialize : function (gcode) {
-    if (!gcode) warnlog("gcode 가 없습니다.");
+    if (!gcode) {
+      errorlog("gcode 가 없습니다.");
+      return 0;
+    }
 
     window._NB_gs    = "wlog.ifdo.co.kr";
     window._NB_MKTCD = gcode;
@@ -119,13 +122,13 @@ const jfullscript = {
         break;
       case "cart":
         this.strValidNotice("_NB_PM");
-        this.objGlobalProd();
+        this.objGlobalProd("u");
         break;
       case "order":
         this.strValidNotice("_NB_ORD_NO");
         this.strValidNotice("_NB_ORD_AMT");
         this.strValidNotice("_NB_PM");
-        this.objGlobalProd();
+        this.objGlobalProd("b");
         break;
       case "prodSearch":
         this.strValidNotice("_NB_kwd");
@@ -133,15 +136,19 @@ const jfullscript = {
         break;
       case "wishList":
         this.strValidNotice("_NB_PM");
-        this.objGlobalProd();
+        this.objGlobalProd("w");
         break;
     }
     this.scriptImport(PageURL);
   },
   /**
    * 상품 정보가 담긴 객체를 window 객체에 설정하며 _send() 함수에서 호출된다. 
+   * @param {string} mode 문자열 변수(w:위시리스트 ,b:구매 ,u:장바구니 )
    */
-  objGlobalProd : function() { window._NB_LO = Object.values(this._NB_LO.prodObj); },
+  objGlobalProd : function(mode) { 
+    window._NB_PM = mode;
+    window._NB_LO = Object.values(this._NB_LO.prodObj); 
+  },
   /**
    * 문자열 변수 값이 유효성 검증이 되면 window 객체에 값을 설정하고, 검증되지 않으면 경고메세지를 출력한다.
    * 
