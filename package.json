@@ -12,7 +12,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/ifdo/react-ifdo"
+    "url": "https://github.com/nibblesky/react-ifdo"
   },
   "author": {
     "name": "ifdo",
@@ -21,7 +21,7 @@
   },
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/ifdo/react-ifdo/issues"
+    "url": "https://github.com/nibblesky/react-ifdo/issues"
   },
   "homepage": "",
   "keywords": [
