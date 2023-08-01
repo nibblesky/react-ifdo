@@ -70,13 +70,14 @@ const jfullscript = {
    */
   scriptImport : function (PageURL) {  
 
-    if (typeof window._NB_PAGE_EVENT !== "function") {
+    if (window._IFDO_SCRIPT === undefined){
 
-      var scriptURL     = "https://script.ifdo.co.kr/jfullscript.js";
+      window._IFDO_SCRIPT = Math.floor(Date.now()/1000);
+      var scriptURL     = "https://script.ifdo.co.kr/jfullscript.js?rnd="+ window._IFDO_SCRIPT;
       var scriptElement = document.createElement("script");
       scriptElement.src = scriptURL;
       document.body.appendChild(scriptElement);
-
+      
     } else {
       this.pageView ( PageURL ? PageURL : window.location.pathname + window.location.search );
     }
@@ -101,7 +102,9 @@ const jfullscript = {
    * @param {string} PageIS 각 페이지 이름
    * @param {string} PageURL 고객이 직접 설정한 가상 페이지 주소
    */
-  _send : function (PageIs, PageURL) {
+  _SEND : function (PageIs, PageURL) {
+
+    console.log("PageIs : ", PageIs);
 
     var curTime = Math.floor(Date.now()/1000); // 현재 시간
     var timeTmpObj = this.timeObj[PageIs]; 
@@ -147,7 +150,7 @@ const jfullscript = {
         this.objGlobalProd("w");
         break;
     }
-    this.scriptImport(PageURL);
+    if( PageURL !== undefined && PageURL != '') this.scriptImport(PageURL);
   },
   /**
    * 상품 정보가 담긴 객체를 window 객체에 설정하며 _send() 함수에서 호출된다. 
