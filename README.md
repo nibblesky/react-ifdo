@@ -18,7 +18,7 @@ npm i react-ifdo
 
 Initializing ReactIFDO and Tracking Pageviews : Create a `RouterIFDOTracker.js` file. And define the code as below.
 
-#### RouterIFDOTracker.js
+###### RouterIFDOTracker.js
 
 ```js
 import { useEffect, useState } from "react";
@@ -30,13 +30,13 @@ const RouterIFDOTracker = () => {
   const [initialized, setInitialized] = useState(false);
 
   useEffect(() => {
-    ReactIFDO.initialize('NTA0000000011'); // Initializing ReactIFDO
+    ReactIFDO.initialize('NTA0000000011');                      // Initializing ReactIFDO
     setInitialized(true);
   }, []);
 
   useEffect(() => {
     if(initialized) {
-        ReactIFDO.pageView(location.pathname+location.search); // Tracking Pageviews
+        ReactIFDO.pageView(location.pathname+location.search);  // Tracking Pageviews
     }   
   }, [initialized,location]);
 };
@@ -47,18 +47,15 @@ export default RouterIFDOTracker;
 
 This function is called where Router is defined.
 
-###### Example
 
-#### Router.js
+###### Router.js
 
 ```js
 ...
 import RouterIFDOTracker from './RouterIFDOTracker'; 
 
 function Router() {
-
    RouterIFDOTracker(); 
-
    return(
       ...
    );
@@ -76,7 +73,7 @@ For a working demo have a look at the demo files or clone this repo and run npm 
 
 #### ReactIFDO.initialize('GCODE')
 
-This function must be used to initialize ReactIFDO before other tracking functions can record data. If you want to get a GCODE, please sign up here [IFDO Join](https://ifdo.co.kr/join_ifdo.apz) and apply for the service.
+This function must be used to initialize ReactIFDO before other tracking functions can record data. If you want to get a GCODE, Sign up here [IFDO Join](https://ifdo.co.kr/join_ifdo.apz) and apply for the service.
 
 ###### Example
 
