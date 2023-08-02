@@ -2,7 +2,7 @@
 
 This is a IFDO service modules for React-only Websites. [IFDO](https://ifdo.co.kr/) is a data-driven marketing automation service that helps improve conversion rates. 
 
-For more information, please visit out website [IFDO Service](https://ifdo.co.kr/spec_segment.apz).
+For more information, please visit our website [IFDO Service](https://ifdo.co.kr/spec_segment.apz).
 
 If you want to use IFDO service in React, please follow the procedure below.
 
