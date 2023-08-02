@@ -16,12 +16,12 @@ const jfullscript = {
   _NB_CT      : "",  /* 카테고리명 */
   _NB_PD      : "",  /* 제품명 */
   _NB_PC      : "",  /* 제품코드 */
-  _NB_AMT     : "",  /* 제품가격, 내부검색 결과수 */
+  _NB_AMT     : 0,  /* 제품가격, 내부검색 결과수 */
   _NB_IMG     : "",  /* 제품이미지 */
   _NB_PD_USE  : "",  /* 현재 상품이 품절인 경우 N 값을 넣어주세요 */
   _NB_PM      : "",  /* 장바구니 구분값(u:장바구니),구매완료 구분값(b), 위시리스트 구분값( w:위시리스트) */
   _NB_ORD_NO  : "",  /* 주문번호(임의번호) */
-  _NB_ORD_AMT : "",  /* 주문 총액(숫자) */
+  _NB_ORD_AMT : 0,  /* 주문 총액(숫자) */
   _NB_kwd     : "",  /* 내부검색어 */
   _NB_UDF     : {},  
   _NB_LO      : {
@@ -126,7 +126,7 @@ const jfullscript = {
         this.strValidNotice("_NB_CT");
         this.strValidNotice("_NB_PD");
         this.strValidNotice("_NB_PC");
-        this.strValidNotice("_NB_AMT");
+        this.intValidNotice("_NB_AMT");
         this.imgValidMetaTag("_NB_IMG");
         this.strValidNotice("_NB_PD_USE");
         break;
@@ -136,7 +136,7 @@ const jfullscript = {
         break;
       case "order":
         this.strValidNotice("_NB_ORD_NO");
-        this.strValidNotice("_NB_ORD_AMT");
+        this.intValidNotice("_NB_ORD_AMT");
         this.strValidNotice("_NB_PM");
         this.objGlobalProd("b");
         break;
