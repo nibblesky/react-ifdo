@@ -109,7 +109,7 @@ Set the following variables on the membership registration page. The variables r
 ```js
 ReactIFDO._NB_JID = "david"; 
 ReactIFDO._NB_JN = "join";
-ReactIFDO._send("join");
+ReactIFDO._SEND("join");
 ```
 
 | Value | Notes|
@@ -117,7 +117,7 @@ ReactIFDO._send("join");
 | _NB_JID| `String`. Required. Join ID like `david`. |
 | _NB_JN| `String`. Required. Sign up/cancellation status like `join` or `withdraw`.|
 
-After setting the variable, call the _send() function is required. See the _send() function below.
+After setting the variable, call the _SEND() function is required. See the _SEND() function below.
 
 ##### 2. Member Login Analysis
 
@@ -129,7 +129,7 @@ The member login page requires a login ID and an object variable with email, age
 ReactIFDO._NB_ID = 'david';              
 ReactIFDO._NB_EMAIL = 'david@test.com';                
 ReactIFDO._NB_UDF = { 'udf01': '', 'udf02': '', 'udf03': '', 'udf04': '' };
-ReactIFDO._send("login");
+ReactIFDO._SEND("login");
 ```
 
 | Value | Notes|
@@ -138,7 +138,7 @@ ReactIFDO._send("login");
 | _NB_EMAIL | `String`. Required. User Email like `david@test.com`. |
 | _NB_UDF | `Object`. Required. User Infomation like `{ 'udf01': '', 'udf02': '', 'udf03': '', 'udf04': '' }`. |
 
-After setting the variable, call the _send() function is required. See the _send() function below.
+After setting the variable, call the _SEND() function is required. See the _SEND() function below.
 
 ##### 3. Product Inquiry Analysis
 
@@ -153,7 +153,7 @@ ReactIFDO._NB_PC = 'a-15978';
 ReactIFDO._NB_AMT = '48000';    
 ReactIFDO._NB_IMG = 'https://www.example.com/productImg.jpg'; 
 ReactIFDO._NB_PD_USE = '';   
-ReactIFDO._send("prodDetail");
+ReactIFDO._SEND("prodDetail");
 ```
 
 | Value | Notes|
@@ -165,7 +165,7 @@ ReactIFDO._send("prodDetail");
 | _NB_IMG | `Object`. Optional. Product image url like `https://www.example.com/productImg.jpg`. |
 | _NB_PD_USE | `String`. Required. The default is blank. if it is out of stock, Enter `N`. |
 
-After setting the variable, call the _send() function is required. See the _send() function below.
+After setting the variable, call the _SEND() function is required. See the _SEND() function below.
 
 ##### 4. Shopping Cart Analysis
 
@@ -184,7 +184,7 @@ for (...) {
    // 장바구니 상품 리스트 객체
    ReactIFDO._NB_LO.push({ PC : 'a-15978', PN : 'padding', CT : 'outer', AM : 1, PR : 32000 });
 }
-ReactIFDO._send("cart");
+ReactIFDO._SEND("cart");
 ```
 
 | Value | Notes|
@@ -197,7 +197,7 @@ ReactIFDO._send("cart");
 | PR | `Number`. Required. Total amount of product like `32000`. |
 
 
-After setting the variable, call the _send() function is required. See the _send() function below.
+After setting the variable, call the _SEND() function is required. See the _SEND() function below.
 
 ##### 5. Purchase Analysis
 
@@ -218,7 +218,7 @@ for (...) {
    // 구매 상품 리스트 객체
    ReactIFDO._NB_LO.push({ PC : 'a-15978', PN : 'padding', CT : 'outer', AM : 1, PR : 32000 });
 }
-ReactIFDO._send("order");
+ReactIFDO._SEND("order");
 ```
 
 | Value | Notes|
@@ -231,7 +231,7 @@ ReactIFDO._send("order");
 | PR | `Number`. Required. Total amount of product like `32000`. |
 
 
-After setting the variable, call the _send() function is required. See the _send() function below.
+After setting the variable, call the _SEND() function is required. See the _SEND() function below.
 
 ##### 6. Internal Search Analysis
 
@@ -242,7 +242,7 @@ Fill out the product search page. A variable representing each keyword and the n
 ```js
 ReactIFDO._NB_kwd = 'black dress';
 ReactIFDO._NB_AMT = '20'; 
-ReactIFDO._send("prodSearch");
+ReactIFDO._SEND("prodSearch");
 ```
 
 | Value | Notes|
@@ -250,7 +250,7 @@ ReactIFDO._send("prodSearch");
 | _NB_kwd | `String`. Required. Internal search terms like `black dress`. |
 | _NB_AMT | `String`. Required. Number of internal search results like `20`. |
 
-After setting the variable, call the _send() function is required. See the _send() function below.
+After setting the variable, call the _SEND() function is required. See the _SEND() function below.
 
 ##### 7. Wish List Analysis
 
@@ -269,7 +269,7 @@ for (...) {
    // 위시 리스트 상품 리스트 객체
    ReactIFDO._NB_LO.push({ PC : 'a-15978', PN : 'padding', CT : 'outer', AM : 1, PR : 32000 });
 }
-ReactIFDO._send("wishList");
+ReactIFDO._SEND("wishList");
 ```
 
 | Value | Notes|
@@ -282,22 +282,22 @@ ReactIFDO._send("wishList");
 | PR | `Number`. Required. Total amount of product like `32000`. |
 
 
-After setting the variable, call the _send() function is required. See the _send() function below.
+After setting the variable, call the _SEND() function is required. See the _SEND() function below.
 
-#### ReactIFDO._send()
+#### ReactIFDO._SEND()
 
 Function called after each page's variable is declared. At this time, if there is a path you want to specify, you can put it as the second factor value.
 
 ###### Example
 
 ```js
-ReactIFDO._send('join');
+ReactIFDO._SEND('join');
 ```
 
 If you are setting a direct path,
 
 ```js
-ReactIFDO._send('join','https://www.example.com');
+ReactIFDO._SEND('join','https://www.example.com');
 ```
 
 After you finish writing the script code for each page, the script installation is complete. 

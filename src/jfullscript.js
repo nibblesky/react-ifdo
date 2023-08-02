@@ -103,7 +103,7 @@ const jfullscript = {
    */
   _SEND : function (PageIs, PageURL) {
 
-    console.log("PageIs : ", PageIs);
+    console.log("IFDO SEND code is completed : ", PageIs);
 
     var curTime = Math.floor(Date.now()/1000); // 현재 시간
     var timeTmpObj = this.timeObj[PageIs]; 
@@ -149,7 +149,10 @@ const jfullscript = {
         this.objGlobalProd("w");
         break;
     }
-    if( PageURL !== undefined && PageURL != '') this.scriptImport(PageURL);
+    if( PageURL !== undefined && PageURL != '') {
+      this.scriptImport(PageURL);
+      console.log("IFDO SEND PageURL is completed : ", PageURL);
+    }
   },
   /**
    * 상품 정보가 담긴 객체를 window 객체에 설정하며 _send() 함수에서 호출된다. 
