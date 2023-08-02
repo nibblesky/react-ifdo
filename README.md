@@ -16,24 +16,67 @@ npm i react-ifdo
 
 ## Usage
 
-Initializing ReactIFDO and Tracking Pageviews : Define the code below the ReactIFDO module at the top of the page.
+Initializing ReactIFDO and Tracking Pageviews : Create a `RouterIFDOTracker.js` file. And define the code as below.
+
+#### RouterIFDOTracker.js
 
 ```js
-import ReactIFDO from 'react-ifdo';
-ReactIFDO.initialize('NTA0000000011');
+import { useEffect, useState } from "react";
+import { useLocation } from "react-router-dom";
+import ReactIFDO from "react-ifdo";
+
+const RouterIFDOTracker = () => {
+  const location = useLocation();
+  const [initialized, setInitialized] = useState(false);
+
+  useEffect(() => {
+    ReactIFDO.initialize('NTA0000000011'); // Initializing ReactIFDO
+    setInitialized(true);
+  }, []);
+
+  useEffect(() => {
+    if(initialized) {
+        ReactIFDO.pageView(location.pathname+location.search); // Tracking Pageviews
+    }   
+  }, [initialized,location]);
+};
+
+export default RouterIFDOTracker;
+
 ```
 
-Define the variables required for the page. 
+This function is called where Router is defined.
 
-For a working demo have a look at the demo files or clone this repo and run npm install npm start then open http://localhost:8080 and follow the instructions. Demo requires you to have your own TrackingID.
+###### Example
 
-After you finish writing the script code for each page, the script installation is complete. 
+#### Router.js
+
+```js
+...
+import RouterIFDOTracker from './RouterIFDOTracker'; 
+
+function Router() {
+
+   RouterIFDOTracker(); 
+
+   return(
+      ...
+   );
+}
+
+export default Router;
+
+```
+
+
+
+For a working demo have a look at the demo files or clone this repo and run npm install npm start then open http://localhost:8080 and follow the instructions. Demo requires you to have your own TrackingID. 
 
 ## API
 
 #### ReactIFDO.initialize('GCODE')
 
-This function must be used to initialize ReactIFDO before other tracking functions can record data.
+This function must be used to initialize ReactIFDO before other tracking functions can record data. If you want to get a GCODE, please sign up here [IFDO Join](https://ifdo.co.kr/join_ifdo.apz) and apply for the service.
 
 ###### Example
 
@@ -260,7 +303,7 @@ If you are setting a direct path,
 ReactIFDO._send('join','https://www.example.com');
 ```
 
-
+After you finish writing the script code for each page, the script installation is complete. 
 
 ## Development
 
