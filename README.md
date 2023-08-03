@@ -150,7 +150,7 @@ These are the variables required for the product detail page. Write it according
 ReactIFDO._NB_CT = 'outer';   
 ReactIFDO._NB_PD = 'padding';      
 ReactIFDO._NB_PC = 'a-15978';   
-ReactIFDO._NB_AMT = '48000';    
+ReactIFDO._NB_AMT = 48000;    
 ReactIFDO._NB_IMG = 'https://www.example.com/productImg.jpg'; 
 ReactIFDO._NB_PD_USE = '';   
 ReactIFDO._SEND("prodDetail");
@@ -161,7 +161,7 @@ ReactIFDO._SEND("prodDetail");
 | _NB_CT  | `String`. Optional. Product category like `outer`. |
 | _NB_PD | `String`. Required. Name of the product like `padding`. |
 | _NB_PC | `String`. Optional. Product code like `a-15978`. |
-| _NB_AMT | `String`. Required. Product price like `48000`. |
+| _NB_AMT | `Number`. Required. Product price like `48000`. |
 | _NB_IMG | `Object`. Optional. Product image url like `https://www.example.com/productImg.jpg`. |
 | _NB_PD_USE | `String`. Required. The default is blank. if it is out of stock, Enter `N`. |
 
@@ -213,7 +213,7 @@ or
 
 ```js
 ReactIFDO._NB_ORD_NO = "ord-154982";
-ReactIFDO._NB_ORD_AMT = '5';                                                                         
+ReactIFDO._NB_ORD_AMT = 5;                                                                         
 for (...) {
    // 구매 상품 리스트 객체
    ReactIFDO._NB_LO.push({ PC : 'a-15978', PN : 'padding', CT : 'outer', AM : 1, PR : 32000 });
@@ -223,6 +223,8 @@ ReactIFDO._SEND("order");
 
 | Value | Notes|
 | ---------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| _NB_ORD_NO | `String`. Required. Order Number like `ord-154982`. |
+| _NB_ORD_AMT | `Number`. Required. Number of Orders like `5`. |
 | _NB_LO.push | `object`. Required. Enter in the object format that contains each information like `{ PC : 'a-15978', PN : 'padding', CT : 'outer', AM : 1, PR : 32000 }`. |
 | PC | `String`. Optional. Product code like `a-15978`. |
 | PN | `String`. Required. Name of the product like `padding`. |
@@ -241,14 +243,14 @@ Fill out the product search page. A variable representing each keyword and the n
 
 ```js
 ReactIFDO._NB_kwd = 'black dress';
-ReactIFDO._NB_AMT = '20'; 
+ReactIFDO._NB_AMT = 20; 
 ReactIFDO._SEND("prodSearch");
 ```
 
 | Value | Notes|
 | ---------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | _NB_kwd | `String`. Required. Internal search terms like `black dress`. |
-| _NB_AMT | `String`. Required. Number of internal search results like `20`. |
+| _NB_AMT | `Number`. Required. Number of internal search results like `20`. |
 
 After setting the variable, call the _SEND() function is required. See the _SEND() function below.
 
