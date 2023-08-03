@@ -1,7 +1,7 @@
 /**
  * @author nibblesky <Nibblesky.com>
  * @description IFDO service modules for React-only Websites. 
- * @version 1.0.6, 2023.08.02 소스 수정
+ * @version 1.0.9, 2023.08.03 소스 수정
  * @copyright © Nibblesky.com 2023
  */
 
