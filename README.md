@@ -108,14 +108,13 @@ Set the following variables on the membership registration page. The variables r
 
 ```js
 ReactIFDO._NB_JID = "david"; 
-ReactIFDO._NB_JN = "join";
-ReactIFDO._SEND("join");
+ReactIFDO._SEND("join"); // or ReactIFDO._SEND("withdraw"); 
 ```
 
 | Value | Notes|
 | ---------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| _NB_JID| `String`. Required. Join ID like `david`. |
-| _NB_JN| `String`. Required. Sign up/cancellation status like `join` or `withdraw`.|
+| _NB_JID | `String`. Required. Join ID like `david`. |
+| _SEND | `String`. Required. Sign up/cancellation status like `join` or `withdraw`.|
 
 After setting the variable, call the _SEND() function is required. See the _SEND() function below.
 

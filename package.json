@@ -1,6 +1,6 @@
 {
   "name": "react-ifdo",
-  "version": "1.0.9",
+  "version": "1.1.1",
   "description": "React IFDO react Module",
   "main": "dist/index.js",
   "scripts": {

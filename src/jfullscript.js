@@ -89,33 +89,50 @@ const jfullscript = {
    * @param {string} PageURL 고객이 직접 설정한 가상 페이지 주소
    */
   pageView : function (pageURL) {
+
     if (!pageURL) errorlog("pageURL 이 없습니다.");
 
     if (typeof window._NB_PAGE_EVENT === "function") window._NB_PAGE_EVENT(pageURL); 
     else warnlog("_NB_PAGE_EVENT 가 로드 되지 않았습니다.");
 
+    this.resetVar();
+
+  },
+  /**
+   * 변수의 값이 누적되지 않도록 재설정해주는 함수이며 pageView() 함수 하단에서 호출된다.
+   * 
+   */
+  resetVar : function () {
+
+    this._NB_IMG        = "";
+    this._NB_LO.prodObj = {};
+    
+    window._NB_IMG      = "";
+    window._NB_LO       = [];
+
   },
   /**
    * 각 페이지마다 호출되는 함수로 고객이 설정한 변수값의 type을 확인하고, 전역 객체인 window 변수에 설정한다.
    * 
-   * @param {string} PageIS 각 페이지 이름
+   * @param {string} PageIs 각 페이지 이름
    * @param {string} PageURL 고객이 직접 설정한 가상 페이지 주소
    */
   _SEND : function (PageIs, PageURL) {
-
-    console.log("IFDO SEND code is completed : ", PageIs);
 
     var curTime = Math.floor(Date.now()/1000); // 현재 시간
     var timeTmpObj = this.timeObj[PageIs]; 
 
     if(timeTmpObj && (curTime - timeTmpObj) < 5) return 0;
-    else this.timeObj[PageIs] = curTime;
+    else this.timeObj[PageIs] = curTime; 
+    
+    console.log("IFDO SEND code is completed : ", PageIs);
 
     switch (PageIs) {
 
       case "join":
+      case "withdraw":
         this.strValidNotice("_NB_JID");
-        this.strValidNotice("_NB_JN");
+        window._NB_JN = PageIs;
         break;
       case "login":
         this.strValidNotice("_NB_ID");
@@ -131,21 +148,18 @@ const jfullscript = {
         this.strValidNotice("_NB_PD_USE");
         break;
       case "cart":
-        this.strValidNotice("_NB_PM");
         this.objGlobalProd("u");
         break;
       case "order":
         this.strValidNotice("_NB_ORD_NO");
         this.intValidNotice("_NB_ORD_AMT");
-        this.strValidNotice("_NB_PM");
         this.objGlobalProd("b");
         break;
       case "prodSearch":
         this.strValidNotice("_NB_kwd");
-        this.strValidNotice("_NB_AMT");
+        this.intValidNotice("_NB_AMT");
         break;
       case "wishList":
-        this.strValidNotice("_NB_PM");
         this.objGlobalProd("w");
         break;
     }
