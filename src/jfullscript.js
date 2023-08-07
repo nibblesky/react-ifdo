@@ -1,7 +1,7 @@
 /**
  * @author nibblesky <Nibblesky.com>
  * @description IFDO service modules for React-only Websites. 
- * @version 1.0.9, 2023.08.03 소스 수정
+ * @version 1.1.2, 2023.08.07 소스 수정
  * @copyright © Nibblesky.com 2023
  */
 
@@ -72,9 +72,9 @@ const jfullscript = {
     if (window._IFDO_SCRIPT === undefined){
 
       window._IFDO_SCRIPT = Math.floor(Date.now()/1000);
-      var scriptURL     = "https://script.ifdo.co.kr/jfullscript.js?rnd="+ window._IFDO_SCRIPT;
-      var scriptElement = document.createElement("script");
-      scriptElement.src = scriptURL;
+      var scriptURL       = "https://script.ifdo.co.kr/jfullscript.js?rnd="+ window._IFDO_SCRIPT;
+      var scriptElement   = document.createElement("script");
+      scriptElement.src   = scriptURL;
       document.body.appendChild(scriptElement);
       
     } else {
@@ -99,14 +99,14 @@ const jfullscript = {
 
   },
   /**
-   * 변수의 값이 누적되지 않도록 재설정해주는 함수이며 pageView() 함수 하단에서 호출된다.
+   * 변수의 값이 누적되지 않도록 변수 재설정해주는 함수이며 pageView() 함수 하단에서 호출된다.
    * 
    */
   resetVar : function () {
 
     this._NB_IMG        = "";
     this._NB_LO.prodObj = {};
-    
+
     window._NB_IMG      = "";
     window._NB_LO       = [];
 
@@ -170,6 +170,7 @@ const jfullscript = {
   },
   /**
    * 상품 정보가 담긴 객체를 window 객체에 설정하며 _send() 함수에서 호출된다. 
+   * 
    * @param {string} mode 문자열 변수(w:위시리스트 ,b:구매 ,u:장바구니 )
    */
   objGlobalProd : function(mode) { 

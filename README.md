@@ -36,7 +36,7 @@ const RouterIFDOTracker = () => {
 
   useEffect(() => {
     if(initialized) {
-        ReactIFDO.pageView(location.pathname+location.search);  // Tracking Pageviews
+        ReactIFDO.pageView(location.pathname + location.search);  // Tracking Pageviews
     }   
   }, [initialized, location]);
 };
