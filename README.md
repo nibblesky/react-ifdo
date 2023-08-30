@@ -141,11 +141,15 @@ After setting the variable, call the _SEND() function is required. See the _SEND
 
 ##### 3. Product Inquiry Analysis
 
-These are the variables required for the product detail page. Write it according to the product category, product name, product code, price, product image, and whether it is out of stock.
+These are the variables required for the product detail page. Write it according to the product category, product name, product code, price, product image, and whether it is out of stock. You also need to set the member attribute value at the top.
 
 ###### Example
 
 ```js
+ReactIFDO._NB_ID = 'david';              
+ReactIFDO._NB_EMAIL = 'david@test.com';                
+ReactIFDO._NB_UDF = { 'udf01': '', 'udf02': '', 'udf03': '', 'udf04': '' };
+
 ReactIFDO._NB_CT = 'outer';   
 ReactIFDO._NB_PD = 'padding';      
 ReactIFDO._NB_PC = 'a-15978';   
@@ -168,7 +172,7 @@ After setting the variable, call the _SEND() function is required. See the _SEND
 
 ##### 4. Shopping Cart Analysis
 
-Variable required for shopping cart page. 'u' must be entered as a shopping cart separator.
+Variable required for shopping cart page. 'u' must be entered as a shopping cart separator. You also need to set the member attribute value at the top.
 
 ###### ReactIFDO._NB_LO.push({PC : '', PN : 'Product Name', CT : '', AM : 'Amount', PR : 'Product Total Amount'});
 
@@ -179,6 +183,10 @@ or
 ###### Example
 
 ```js
+ReactIFDO._NB_ID = 'david';              
+ReactIFDO._NB_EMAIL = 'david@test.com';                
+ReactIFDO._NB_UDF = { 'udf01': '', 'udf02': '', 'udf03': '', 'udf04': '' };
+
 for (...) {
    // 장바구니 상품 리스트 객체
    ReactIFDO._NB_LO.push({ PC : 'a-15978', PN : 'padding', CT : 'outer', AM : 1, PR : 32000 });
@@ -200,7 +208,7 @@ After setting the variable, call the _SEND() function is required. See the _SEND
 
 ##### 5. Purchase Analysis
 
-Set the following variables on the order completion page. Be especially careful when creating the `NB_LO.push` variable. Even if it is an optional value, you must also enter a required variable name. Please look carefully at the format and fill it out accordingly.
+Set the following variables on the order completion page. Be especially careful when creating the `NB_LO.push` variable. Even if it is an optional value, you must also enter a required variable name. Please look carefully at the format and fill it out accordingly. You also need to set the member attribute value at the top.
 
 ###### ReactIFDO._NB_LO.push({PC : '', PN : 'Product Name', CT : '', AM : 'Amount', PR : 'Product Total Amount'});
 
@@ -211,6 +219,10 @@ or
 ###### Example
 
 ```js
+ReactIFDO._NB_ID = 'david';              
+ReactIFDO._NB_EMAIL = 'david@test.com';                
+ReactIFDO._NB_UDF = { 'udf01': '', 'udf02': '', 'udf03': '', 'udf04': '' };
+
 ReactIFDO._NB_ORD_NO = "ord-154982";
 ReactIFDO._NB_ORD_AMT = 5;                                                                         
 for (...) {
@@ -236,11 +248,15 @@ After setting the variable, call the _SEND() function is required. See the _SEND
 
 ##### 6. Internal Search Analysis
 
-Fill out the product search page. A variable representing each keyword and the number of search results.
+Fill out the product search page. A variable representing each keyword and the number of search results. You also need to set the member attribute value at the top.
 
 ###### Example
 
 ```js
+ReactIFDO._NB_ID = 'david';              
+ReactIFDO._NB_EMAIL = 'david@test.com';                
+ReactIFDO._NB_UDF = { 'udf01': '', 'udf02': '', 'udf03': '', 'udf04': '' };
+
 ReactIFDO._NB_kwd = 'black dress';
 ReactIFDO._NB_AMT = 20; 
 ReactIFDO._SEND("prodSearch");
@@ -255,7 +271,7 @@ After setting the variable, call the _SEND() function is required. See the _SEND
 
 ##### 7. Wish List Analysis
 
-Lastly, the wish list page. You must create a separation value for the wish list with `w` . And be careful when you write the `_NB_LO.push()` function.
+Lastly, the wish list page. You must create a separation value for the wish list with `w` . And be careful when you write the `_NB_LO.push()` function. You also need to set the member attribute value at the top.
 
 ###### ReactIFDO._NB_LO.push({PC : '', PN : 'Product Name', CT : '', AM : 'Amount', PR : 'Product Total Amount'});
 
@@ -266,6 +282,10 @@ or
 ###### Example
 
 ```js
+ReactIFDO._NB_ID = 'david';              
+ReactIFDO._NB_EMAIL = 'david@test.com';                
+ReactIFDO._NB_UDF = { 'udf01': '', 'udf02': '', 'udf03': '', 'udf04': '' };
+
 for (...) {
    // 위시 리스트 상품 리스트 객체
    ReactIFDO._NB_LO.push({ PC : 'a-15978', PN : 'padding', CT : 'outer', AM : 1, PR : 32000 });
