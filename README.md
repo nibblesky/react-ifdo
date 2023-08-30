@@ -118,26 +118,6 @@ ReactIFDO._SEND("join"); // or ReactIFDO._SEND("withdraw");
 
 After setting the variable, call the _SEND() function is required. See the _SEND() function below.
 
-##### 2. Member Login Analysis
-
-The member login page requires a login ID and an object variable with email, age, gender, and lastly all that information. Please set it according to the format below.
-
-###### Example
-
-```js
-ReactIFDO._NB_ID = 'david';              
-ReactIFDO._NB_EMAIL = 'david@test.com';                
-ReactIFDO._NB_UDF = { 'udf01': '', 'udf02': '', 'udf03': '', 'udf04': '' };
-ReactIFDO._SEND("login");
-```
-
-| Value | Notes|
-| ---------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| _NB_ID  | `String`. Required. Login ID like `david`. |
-| _NB_EMAIL | `String`. Required. User Email like `david@test.com`. |
-| _NB_UDF | `Object`. Required. User Infomation like `{ 'udf01': '', 'udf02': '', 'udf03': '', 'udf04': '' }`. |
-
-After setting the variable, call the _SEND() function is required. See the _SEND() function below.
 
 ##### 3. Product Inquiry Analysis
 

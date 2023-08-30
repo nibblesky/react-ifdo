@@ -134,11 +134,13 @@ const jfullscript = {
         this.strValidNotice("_NB_JID");
         window._NB_JN = PageIs;
         break;
-      case "login":
+
+      case "login": 
         this.strValidNotice("_NB_ID");
         this.strValidNotice("_NB_EMAIL");
         this.objValidNotice("_NB_UDF");
         break;
+        
       case "prodDetail":
         this.strValidNotice("_NB_CT");
         this.strValidNotice("_NB_PD");
