@@ -127,6 +127,10 @@ const jfullscript = {
     
     console.log("IFDO SEND code is completed : ", PageIs);
 
+    this.strValidNotice("_NB_ID");
+    this.strValidNotice("_NB_EMAIL");
+    this.objValidNotice("_NB_UDF");
+
     switch (PageIs) {
 
       case "join":
@@ -134,13 +138,6 @@ const jfullscript = {
         this.strValidNotice("_NB_JID");
         window._NB_JN = PageIs;
         break;
-
-      case "login": 
-        this.strValidNotice("_NB_ID");
-        this.strValidNotice("_NB_EMAIL");
-        this.objValidNotice("_NB_UDF");
-        break;
-        
       case "prodDetail":
         this.strValidNotice("_NB_CT");
         this.strValidNotice("_NB_PD");
@@ -185,8 +182,14 @@ const jfullscript = {
    * @param {string} mName 문자열 변수
    */
   strValidNotice : function (mName) {
-    if (typeof this[mName] == "string" && this[mName] != "") window[mName] = this[mName];
-    else warnlog(`${mName} 이(가) 문자 형식이 아닙니다.`);
+
+    if (typeof this[mName] == "string" ){
+      if ( this[mName] != "") window[mName] = this[mName] ;
+    } 
+    else {
+      warnlog(`${mName} 이(가) 문자 형식이 아닙니다.`);
+    }
+     
   },
   /**
    * 정수형 변수 값이 유효성 검증이 되면 window 객체에 값을 설정하고, 검증되지 않으면 경고메세지를 출력한다.
@@ -194,8 +197,14 @@ const jfullscript = {
    * @param {string} mName 정수형 변수
    */
   intValidNotice : function (mName) {
-    if (typeof this[mName] == "number" && this[mName] != 0) window[mName] = this[mName];
-    else warnlog(`${mName} 이(가) 숫자 형식이 아닙니다.`);
+
+    if (typeof this[mName] == "number"){
+      if (this[mName] != 0) window[mName] = this[mName];
+    } 
+    else {
+      warnlog(`${mName} 이(가) 숫자 형식이 아닙니다.`);
+    }
+
   },
   /**
    * 객체형 변수 값이 유효성 검증이 되면 window 객체에 값을 설정하고, 검증되지 않으면 경고메세지를 출력한다.
@@ -203,8 +212,14 @@ const jfullscript = {
    * @param {string} mName 객체형 변수
    */
   objValidNotice : function (mName) {
-    if (typeof this[mName] == "object" && Object.keys(mName).length > 0) window[mName] = this[mName];
-    else warnlog(`${mName} 이(가) 객체 형식이 아닙니다.`);
+
+    if (typeof this[mName] == "object"){
+      if (Object.keys(mName).length > 0) window[mName] = this[mName];
+    } 
+    else {
+       warnlog(`${mName} 이(가) 객체 형식이 아닙니다.`);
+    }
+
   },
   /**
    * 고객이 직접 설정한 이미지 주소가 있으면 유효성 검증 후 window 객체에 값을 설정한다.
