@@ -98,7 +98,7 @@ ReactIFDO.pageView();
 
 #### Variable Settings
 
-You have to set the necessary variables for each page, such as membership registration(1), login(2), product details(3), shopping basket(4), purchase (5) , internal search(6) , and wishList(7).
+You have to set the necessary variables for each page, such as membership registration(1), product details(2), shopping basket(3), purchase(4) , internal search(5) , and wishList(6).
 
 ##### 1. Member Registration Analysis
 
@@ -119,7 +119,7 @@ ReactIFDO._SEND("join"); // or ReactIFDO._SEND("withdraw");
 After setting the variable, call the _SEND() function is required. See the _SEND() function below.
 
 
-##### 3. Product Inquiry Analysis
+##### 2. Product Inquiry Analysis
 
 These are the variables required for the product detail page. Write it according to the product category, product name, product code, price, product image, and whether it is out of stock. You also need to set the member attribute value at the top.
 
@@ -150,7 +150,7 @@ ReactIFDO._SEND("prodDetail");
 
 After setting the variable, call the _SEND() function is required. See the _SEND() function below.
 
-##### 4. Shopping Cart Analysis
+##### 3. Shopping Cart Analysis
 
 Variable required for shopping cart page. 'u' must be entered as a shopping cart separator. You also need to set the member attribute value at the top.
 
@@ -186,7 +186,7 @@ ReactIFDO._SEND("cart");
 
 After setting the variable, call the _SEND() function is required. See the _SEND() function below.
 
-##### 5. Purchase Analysis
+##### 4. Purchase Analysis
 
 Set the following variables on the order completion page. Be especially careful when creating the `NB_LO.push` variable. Even if it is an optional value, you must also enter a required variable name. Please look carefully at the format and fill it out accordingly. You also need to set the member attribute value at the top.
 
@@ -226,7 +226,7 @@ ReactIFDO._SEND("order");
 
 After setting the variable, call the _SEND() function is required. See the _SEND() function below.
 
-##### 6. Internal Search Analysis
+##### 5. Internal Search Analysis
 
 Fill out the product search page. A variable representing each keyword and the number of search results. You also need to set the member attribute value at the top.
 
@@ -249,7 +249,7 @@ ReactIFDO._SEND("prodSearch");
 
 After setting the variable, call the _SEND() function is required. See the _SEND() function below.
 
-##### 7. Wish List Analysis
+##### 6. Wish List Analysis
 
 Lastly, the wish list page. You must create a separation value for the wish list with `w` . And be careful when you write the `_NB_LO.push()` function. You also need to set the member attribute value at the top.
 
