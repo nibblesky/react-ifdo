@@ -17,6 +17,7 @@ const jfullscript = {
   _NB_PD      : "",  /* 제품명 */
   _NB_PC      : "",  /* 제품코드 */
   _NB_AMT     : 0,  /* 제품가격, 내부검색 결과수 */
+  _NB_DAMT    : 0,  /* 상품상세 - 할인가격 적용 */
   _NB_IMG     : "",  /* 제품이미지 */
   _NB_PD_USE  : "",  /* 현재 상품이 품절인 경우 N 값을 넣어주세요 */
   _NB_PM      : "",  /* 장바구니 구분값(u:장바구니),구매완료 구분값(b), 위시리스트 구분값( w:위시리스트) */
@@ -143,6 +144,7 @@ const jfullscript = {
         this.strValidNotice("_NB_PD");
         this.strValidNotice("_NB_PC");
         this.intValidNotice("_NB_AMT");
+        this.intValidNotice("_NB_DAMT");
         this.imgValidMetaTag("_NB_IMG");
         this.strValidNotice("_NB_PD_USE");
         break;
@@ -157,6 +159,7 @@ const jfullscript = {
       case "prodSearch":
         this.strValidNotice("_NB_kwd");
         this.intValidNotice("_NB_AMT");
+        this.intValidNotice("_NB_DAMT");
         break;
       case "wishList":
         this.objGlobalProd("w");
