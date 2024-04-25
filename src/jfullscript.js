@@ -159,7 +159,6 @@ const jfullscript = {
       case "prodSearch":
         this.strValidNotice("_NB_kwd");
         this.intValidNotice("_NB_AMT");
-        this.intValidNotice("_NB_DAMT");
         break;
       case "wishList":
         this.objGlobalProd("w");
