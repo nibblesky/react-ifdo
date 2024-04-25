@@ -107,9 +107,33 @@ const jfullscript = {
 
     this._NB_IMG        = "";
     this._NB_LO.prodObj = {};
-
+    this._NB_JID        = "";
+    this._NB_JN         = "";
+    this._NB_CT         = "";
+    this._NB_PD         = "";
+    this._NB_PC         = "";
+    this._NB_AMT        = 0;  
+    this._NB_DAMT       = 0;
+    this._NB_PD_USE     = "";
+    this._NB_PM         = "";
+    this._NB_ORD_NO     = "";
+    this._NB_ORD_AMT    = 0;
+    this._NB_kwd        = "";
+    
     window._NB_IMG      = "";
     window._NB_LO       = [];
+    window._NB_JID      = "";
+    window._NB_JN       = "";
+    window._NB_CT       = "";
+    window._NB_PD       = "";
+    window._NB_PC       = "";
+    window._NB_AMT      = 0; 
+    window._NB_DAMT     = 0;
+    window._NB_PD_USE   = "";
+    window._NB_PM       = "";
+    window._NB_ORD_NO   = "";
+    window._NB_ORD_AMT  = 0;
+    window._NB_kwd      = "";
 
   },
   /**
