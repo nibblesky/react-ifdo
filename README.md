@@ -133,7 +133,8 @@ ReactIFDO._NB_UDF = { 'udf01': '', 'udf02': '', 'udf03': '', 'udf04': '' };
 ReactIFDO._NB_CT = 'outer';   
 ReactIFDO._NB_PD = 'padding';      
 ReactIFDO._NB_PC = 'a-15978';   
-ReactIFDO._NB_AMT = 48000;    
+ReactIFDO._NB_AMT = 48000;
+ReactIFDO._NB_DAMT = 36000;    
 ReactIFDO._NB_IMG = 'https://www.example.com/productImg.jpg'; 
 ReactIFDO._NB_PD_USE = '';   
 ReactIFDO._SEND("prodDetail");
@@ -145,6 +146,7 @@ ReactIFDO._SEND("prodDetail");
 | _NB_PD | `String`. Required. Name of the product like `padding`. |
 | _NB_PC | `String`. Optional. Product code like `a-15978`. |
 | _NB_AMT | `Number`. Required. Product price like `48000`. |
+| _NB_DAMT | `Number`. Required. Discounted Product price like `36000`.|
 | _NB_IMG | `Object`. Optional. Product image url like `https://www.example.com/productImg.jpg`. |
 | _NB_PD_USE | `String`. Required. The default is blank. if it is out of stock, Enter `N`. |
 
@@ -238,7 +240,7 @@ ReactIFDO._NB_EMAIL = 'david@test.com';
 ReactIFDO._NB_UDF = { 'udf01': '', 'udf02': '', 'udf03': '', 'udf04': '' };
 
 ReactIFDO._NB_kwd = 'black dress';
-ReactIFDO._NB_AMT = 20; 
+ReactIFDO._NB_AMT = 20;
 ReactIFDO._SEND("prodSearch");
 ```
 
