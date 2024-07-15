@@ -143,11 +143,18 @@ const jfullscript = {
    * @param {string} PageURL 고객이 직접 설정한 가상 페이지 주소
    */
   _SEND : function (PageIs, PageURL) {
-
+    
     var curTime = Math.floor(Date.now()/1000); // 현재 시간
     var timeTmpObj = this.timeObj[PageIs]; 
 
-    if(timeTmpObj && (curTime - timeTmpObj) < 5) return 0;
+    /*
+     5초이내 같은 이벤트는 중복 가능성이 있어 제한하고 있습니다.
+     시간( 초단위) 값은 직접 수정하셔서 사용하시기 바랍니다.
+    */
+    if(timeTmpObj && (curTime - timeTmpObj) < 5) {
+      this.resetVar();
+      return 0;
+    }
     else this.timeObj[PageIs] = curTime; 
     
     console.log("IFDO SEND code is completed : ", PageIs);
