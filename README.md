@@ -188,7 +188,43 @@ ReactIFDO._SEND("cart");
 
 After setting the variable, call the _SEND() function is required. See the _SEND() function below.
 
-##### 4. Purchase Analysis
+##### 4. Order Form Analysis
+
+Variable required for order form page. 'f' must be entered as a order form separator. You also need to set the member attribute value at the top.
+
+###### ReactIFDO._NB_LO.push({PC : '', PN : 'Product Name', CT : '', AM : 'Amount', PR : 'Product Total Amount'});
+
+or
+
+###### ReactIFDO._NB_LO.push( {PC : 'Product Code', PN : 'Product Name', CT : 'Category', AM : 'Amount', PR : 'Product Total Amount'} );
+
+###### Example
+
+```js
+ReactIFDO._NB_ID = 'david';              
+ReactIFDO._NB_EMAIL = 'david@test.com';                
+ReactIFDO._NB_UDF = { 'udf01': '', 'udf02': '', 'udf03': '', 'udf04': '' };
+
+for (...) {
+   // 주문서 상품 리스트 객체
+   ReactIFDO._NB_LO.push({ PC : 'a-15978', PN : 'padding', CT : 'outer', AM : 1, PR : 32000 });
+}
+ReactIFDO._SEND("orderform");
+```
+
+| Value | Notes|
+| ---------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| _NB_LO.push | `object`. Required. Enter in the object format that contains each information like `{ PC : 'a-15978', PN : 'padding', CT : 'outer', AM : 1, PR : 32000 }`. |
+| PC | `String`. Optional. Product code like `a-15978`. |
+| PN | `String`. Required. Name of the product like `padding`. |
+| CT | `String`. Optional. Product Category like `outer`. |
+| AM | `Number`. Required. Number of Orders like `1`. |
+| PR | `Number`. Required. Total amount of product like `32000`. |
+
+
+After setting the variable, call the _SEND() function is required. See the _SEND() function below.
+
+##### 5. Purchase Analysis
 
 Set the following variables on the order completion page. Be especially careful when creating the `NB_LO.push` variable. Even if it is an optional value, you must also enter a required variable name. Please look carefully at the format and fill it out accordingly. You also need to set the member attribute value at the top.
 
@@ -228,7 +264,7 @@ ReactIFDO._SEND("order");
 
 After setting the variable, call the _SEND() function is required. See the _SEND() function below.
 
-##### 5. Internal Search Analysis
+##### 6. Internal Search Analysis
 
 Fill out the product search page. A variable representing each keyword and the number of search results. You also need to set the member attribute value at the top.
 
@@ -251,7 +287,7 @@ ReactIFDO._SEND("prodSearch");
 
 After setting the variable, call the _SEND() function is required. See the _SEND() function below.
 
-##### 6. Wish List Analysis
+##### 7. Wish List Analysis
 
 Lastly, the wish list page. You must create a separation value for the wish list with `w` . And be careful when you write the `_NB_LO.push()` function. You also need to set the member attribute value at the top.
 
