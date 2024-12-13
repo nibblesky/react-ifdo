@@ -62,16 +62,6 @@ const jfullscript = {
 
     this.scriptImport();
   },
-  getCurPageType : function (){
-	  var _curl = window.location.pathname ;
-	  return  _curl.indexOf('/products/')==0?1:0;
-	  return  _curl.indexOf('/cart')==0?2:0;
-	  return _curl.indexOf('/order/complete')==0?3:0;
-	  return _curl.indexOf('/signup/complete')==0?4:0;
-	  return _curl.indexOf('/search')==0?5:0;
-	  return 0;	  
-  },
-  
   /**
    * ifdo-jfullscript 설치 및 pageView 불러오는 함수로 조건문에 맞게 각각 실행한다.
    * 
@@ -80,11 +70,7 @@ const jfullscript = {
   scriptImport : function (PageURL) {  
 
     if (window._IFDO_SCRIPT === undefined){
-		window._NB_URL = '';
-		// 상품상세, 장바구니, 가입완료, 주문완료 페이지 더미도메인으로 이프두 처리하지 않도록 추가.
-		if( this.getCurPageType() > 0 ){
-			window._NB_URL = 'https://dummydomain.com/dummy.html';
-		}
+	    
       window._IFDO_SCRIPT = Math.floor(Date.now()/1000);
       var scriptURL       = "https://script.ifdo.co.kr/jfullscript.js?rnd="+ window._IFDO_SCRIPT;
       var scriptElement   = document.createElement("script");
@@ -104,12 +90,7 @@ const jfullscript = {
    */
   pageView : function (pageURL) {
 
-    if (!pageURL) errorlog("pageURL 이 없습니다.");
-	
-	// dummy를 현재 URL로 복원
-	if( this.getCurPageType() > 0 ){
-		window._NB_URL = 'https://'+window.document.domain+window.location.pathname + window.location.search;
-	}	
+    if (!pageURL) errorlog("pageURL 이 없습니다.");	
 
     if (typeof window._NB_PAGE_EVENT === "function") window._NB_PAGE_EVENT(pageURL); 
     else warnlog("_NB_PAGE_EVENT 가 로드 되지 않았습니다.");
